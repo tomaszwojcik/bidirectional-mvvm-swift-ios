@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF34E0281F8E520200D061C3 /* KeyPathBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC81C991F8E5165008FBE95 /* KeyPathBinding.swift */; };
 		DF725A6A1F8E4B7800DF4931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF725A691F8E4B7800DF4931 /* AppDelegate.swift */; };
 		DF725A6F1F8E4B7800DF4931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF725A6D1F8E4B7800DF4931 /* Main.storyboard */; };
 		DF725A711F8E4B7800DF4931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF725A701F8E4B7800DF4931 /* Assets.xcassets */; };
 		DF725A741F8E4B7800DF4931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF725A721F8E4B7800DF4931 /* LaunchScreen.storyboard */; };
 		DF725A881F8E4CAB00DF4931 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF725A871F8E4CAB00DF4931 /* Credentials.swift */; };
-		DF725A8D1F8E4D5100DF4931 /* KeyPathBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF725A8C1F8E4D5100DF4931 /* KeyPathBinding.swift */; };
 		DF725A911F8E4DF600DF4931 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF725A901F8E4DF300DF4931 /* LoginViewModel.swift */; };
 		DF725A931F8E4E3F00DF4931 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF725A921F8E4E2900DF4931 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
@@ -25,9 +25,9 @@
 		DF725A731F8E4B7800DF4931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF725A751F8E4B7800DF4931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF725A871F8E4CAB00DF4931 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		DF725A8C1F8E4D5100DF4931 /* KeyPathBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyPathBinding.swift; path = "Bidirectional MVVM/Binding/KeyPathBinding.swift"; sourceTree = SOURCE_ROOT; };
 		DF725A901F8E4DF300DF4931 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DF725A921F8E4E2900DF4931 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DFC81C991F8E5165008FBE95 /* KeyPathBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPathBinding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +60,9 @@
 		DF725A681F8E4B7800DF4931 /* Bidirectional MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				DFC81C981F8E5165008FBE95 /* Binding */,
 				DF725A851F8E4C9500DF4931 /* Model */,
 				DF725A8F1F8E4DC500DF4931 /* ViewModel */,
-				DF725A7B1F8E4B9300DF4931 /* Binding */,
 				DF725A8E1F8E4DB600DF4931 /* Controller */,
 				DF725A691F8E4B7800DF4931 /* AppDelegate.swift */,
 				DF725A6D1F8E4B7800DF4931 /* Main.storyboard */,
@@ -71,15 +71,6 @@
 				DF725A751F8E4B7800DF4931 /* Info.plist */,
 			);
 			path = "Bidirectional MVVM";
-			sourceTree = "<group>";
-		};
-		DF725A7B1F8E4B9300DF4931 /* Binding */ = {
-			isa = PBXGroup;
-			children = (
-				DF725A8C1F8E4D5100DF4931 /* KeyPathBinding.swift */,
-			);
-			name = Binding;
-			path = "../../../UI stuff/Better MVVM/Better MVVM/Binding";
 			sourceTree = "<group>";
 		};
 		DF725A851F8E4C9500DF4931 /* Model */ = {
@@ -104,6 +95,14 @@
 				DF725A901F8E4DF300DF4931 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DFC81C981F8E5165008FBE95 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				DFC81C991F8E5165008FBE95 /* KeyPathBinding.swift */,
+			);
+			path = Binding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF34E0281F8E520200D061C3 /* KeyPathBinding.swift in Sources */,
 				DF725A911F8E4DF600DF4931 /* LoginViewModel.swift in Sources */,
 				DF725A881F8E4CAB00DF4931 /* Credentials.swift in Sources */,
-				DF725A8D1F8E4D5100DF4931 /* KeyPathBinding.swift in Sources */,
 				DF725A931F8E4E3F00DF4931 /* LoginViewController.swift in Sources */,
 				DF725A6A1F8E4B7800DF4931 /* AppDelegate.swift in Sources */,
 			);
