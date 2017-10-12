@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF311B531F8F59D900604747 /* CredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF311B521F8F59D900604747 /* CredentialsViewController.swift */; };
 		DF34E0281F8E520200D061C3 /* KeyPathBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC81C991F8E5165008FBE95 /* KeyPathBinding.swift */; };
 		DF725A6A1F8E4B7800DF4931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF725A691F8E4B7800DF4931 /* AppDelegate.swift */; };
 		DF725A6F1F8E4B7800DF4931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF725A6D1F8E4B7800DF4931 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF311B521F8F59D900604747 /* CredentialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsViewController.swift; sourceTree = "<group>"; };
 		DF725A661F8E4B7800DF4931 /* Bidirectional MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bidirectional MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF725A691F8E4B7800DF4931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF725A6E1F8E4B7800DF4931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				DF725A921F8E4E2900DF4931 /* LoginViewController.swift */,
+				DF311B521F8F59D900604747 /* CredentialsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF34E0281F8E520200D061C3 /* KeyPathBinding.swift in Sources */,
+				DF311B531F8F59D900604747 /* CredentialsViewController.swift in Sources */,
 				DF725A911F8E4DF600DF4931 /* LoginViewModel.swift in Sources */,
 				DF725A881F8E4CAB00DF4931 /* Credentials.swift in Sources */,
 				DF725A931F8E4E3F00DF4931 /* LoginViewController.swift in Sources */,
@@ -319,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Bidirectional MVVM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.playbit.Bidirectional-MVVM";
@@ -333,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Bidirectional MVVM/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "pl.playbit.Bidirectional-MVVM";

@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="ouj-Ye-fWV">
             <objects>
-                <viewController id="6K8-fM-UpJ" customClass="LoginViewController" customModule="Bidirectional_MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="6K8-fM-UpJ" customClass="LoginViewController" customModule="Bidirectional_MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsT-Hv-bim">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                                 <rect key="frame" x="296" y="366" width="42" height="30"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
-                                    <action selector="performLogin:" destination="6K8-fM-UpJ" eventType="touchUpInside" id="1uR-WE-nYM"/>
+                                    <action selector="login:" destination="6K8-fM-UpJ" eventType="touchUpInside" id="4lI-l9-UrU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj8-PO-nI5">
@@ -68,7 +68,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fel-7m-bZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161" y="130"/>
+            <point key="canvasLocation" x="160.80000000000001" y="129.98500749625188"/>
+        </scene>
+        <!--Credentials View Controller-->
+        <scene sceneID="9fn-6H-XAB">
+            <objects>
+                <viewController storyboardIdentifier="credentials" id="LSy-Hh-Zan" customClass="CredentialsViewController" customModule="Bidirectional_MVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GDd-vW-5MF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwC-kh-gFo">
+                                <rect key="frame" x="119" y="328.5" width="137" height="30"/>
+                                <state key="normal" title="Return to login form"/>
+                                <connections>
+                                    <action selector="goBackToLogin:" destination="LSy-Hh-Zan" eventType="touchUpInside" id="KDY-D0-1LK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRn-Ik-vj6">
+                                <rect key="frame" x="150.5" y="299" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdu-dc-67X">
+                                <rect key="frame" x="167" y="270" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vwC-kh-gFo" firstAttribute="centerX" secondItem="9vI-1L-hDh" secondAttribute="centerX" id="2vB-II-NRR"/>
+                            <constraint firstItem="bdu-dc-67X" firstAttribute="centerX" secondItem="9vI-1L-hDh" secondAttribute="centerX" id="9KJ-9B-Exa"/>
+                            <constraint firstItem="LRn-Ik-vj6" firstAttribute="centerX" secondItem="9vI-1L-hDh" secondAttribute="centerX" id="C6Z-VP-ufY"/>
+                            <constraint firstItem="LRn-Ik-vj6" firstAttribute="top" secondItem="bdu-dc-67X" secondAttribute="bottom" constant="8" id="SXN-Kw-nMB"/>
+                            <constraint firstItem="vwC-kh-gFo" firstAttribute="centerY" secondItem="9vI-1L-hDh" secondAttribute="centerY" id="XMQ-WP-I6X"/>
+                            <constraint firstItem="vwC-kh-gFo" firstAttribute="top" secondItem="LRn-Ik-vj6" secondAttribute="bottom" constant="8.5" id="tz4-4c-23m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9vI-1L-hDh"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="bdu-dc-67X" id="Vis-jU-eLG"/>
+                        <outlet property="passwordLabel" destination="LRn-Ik-vj6" id="vw6-Zs-0Iv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hla-aR-nRy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="914" y="130"/>
         </scene>
     </scenes>
 </document>

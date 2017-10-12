@@ -10,17 +10,16 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
-    let credentials = Credentials(email: "me@zavaster.com", password: "Secret1234")
-
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
 
     private lazy var viewModel: LoginViewModel = {
-        let viewModel = LoginViewModel(credentials: credentials)
-        return viewModel
+        let credentials = Credentials(email: "me@zavaster.com", password: "Secret1234")
+        return LoginViewModel(credentials: credentials)
     }()
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         viewModel.email.bind(to: emailTextField)
         viewModel.password.bind(to: passwordTextField)
     }
@@ -30,15 +29,11 @@ class LoginViewController: UIViewController {
         viewModel.password.value = ""
     }
 
-    @IBAction func performLogin(_ sender: UIButton) {
+    @IBAction func login(_ sender: UIButton) {
         sender.isEnabled = false
-        let alert = UIAlertController(
-            title: "Logged in!",
-            message: "Email: \(viewModel.email.value), pass: \(viewModel.password.value)",
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok!", style: .default, handler: { _ in
-            sender.isEnabled = true
-        }))
-        present(alert, animated: true, completion: nil)
+        let credentialsVC = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "credentials") as! CredentialsViewController
+        credentialsVC.viewModel = viewModel
+        UIApplication.shared.keyWindow?.rootViewController = credentialsVC
     }
 }

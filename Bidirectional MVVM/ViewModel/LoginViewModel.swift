@@ -9,14 +9,20 @@
 import Foundation
 
 class LoginViewModel {
-    private unowned let credentials: Credentials
+    private let credentials: Credentials
 
     let email: KeyPathBinding<Credentials>
     let password: KeyPathBinding<Credentials>
 
     init(credentials: Credentials) {
         self.credentials = credentials
-        email = KeyPathBinding(object: credentials, keyPath: \.email)
-        password = KeyPathBinding(object: credentials, keyPath: \.password)
+        email = KeyPathBinding(model: credentials, valueKeyPath: \.email)
+        password = KeyPathBinding(model: credentials, valueKeyPath: \.password)
+    }
+
+    deinit {
+        print("LoginViewModel deinit")
+        email.unbind()
+        password.unbind()
     }
 }

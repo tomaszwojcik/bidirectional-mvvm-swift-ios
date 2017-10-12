@@ -9,34 +9,59 @@
 import Foundation
 import UIKit
 
-class KeyPathBinding<Type> {
-    private let object: Type
-    private let keyPath: ReferenceWritableKeyPath<Type, String>
+class KeyPathBinding<ModelType> {
+    // Model that will be modified
+    private let model: ModelType!
+    // Key path to value in the model
+    private let valueKeyPath: ReferenceWritableKeyPath<ModelType, String>
+    // Textfield that will be bound to the value
     private weak var textField: UITextField?
 
-    init(object: Type, keyPath: ReferenceWritableKeyPath<Type, String>) {
-        self.object = object
-        self.keyPath = keyPath
+    // You can set bidirectional or unidirectional updates (or none which is a nonsense)
+    // When model changes then update view (text field)
+    var allowViewUpdatesFromModel: Bool = true
+    // When view (text field) changes then update model
+    var allowModelUpdatesFromView: Bool = true
+
+    init(model: ModelType, valueKeyPath: ReferenceWritableKeyPath<ModelType, String>) {
+        self.model = model
+        self.valueKeyPath = valueKeyPath
+    }
+
+    deinit {
+        print("KeyPathBinding deinit")
     }
 
     var value: String {
         get {
-            return object[keyPath: keyPath]
+            return model[keyPath: valueKeyPath]
         }
 
         set {
-            object[keyPath: keyPath] = newValue
+            model[keyPath: valueKeyPath] = newValue
+            guard allowViewUpdatesFromModel else { return }
             textField?.text = newValue
         }
     }
 
+    // Start listening view changes
     func bind(to textField: UITextField) {
         self.textField = textField
         textField.text = value
-        textField.addTarget(self, action: #selector(didChange(textField:)), for: .allEditingEvents)
+        textField.addTarget(self,
+                            action: #selector(didChange(textField:)),
+                            for: .allEditingEvents)
+    }
+
+    // Stop listening view changes
+    func unbind() {
+        textField?.removeTarget(self,
+                                action: #selector(didChange(textField:)),
+                                for: .allEditingEvents)
     }
 
     @objc private func didChange(textField: UITextField) {
+        guard allowModelUpdatesFromView else { return }
         value = textField.text ?? ""
     }
 }
