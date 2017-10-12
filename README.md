@@ -2,7 +2,7 @@
 
 ## Why?
 
-Because I wanted to see how I can do "real" MVVM, that dynamically gets exchanges data between view and model (not, as in most examples, only sends data to view).
+Because I wanted to see how I can do "real" MVVM, that dynamically exchanges data between view and model (not, as in most examples, only sends data to view).
 
 In addition it's a  real-world example of Swift 4 key path usage.
 
