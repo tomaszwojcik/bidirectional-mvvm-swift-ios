@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 
 class KeyPathBinding<ModelType> {
-    // Model that will be modified
-    private let model: ModelType!
+    // Model that will be modified (*MUST* be var)
+    private var model: ModelType!
     // Key path to value in the model
-    private let valueKeyPath: ReferenceWritableKeyPath<ModelType, String>
+    private let valueKeyPath: WritableKeyPath<ModelType, String>
     // Textfield that will be bound to the value
     private weak var textField: UITextField?
 
@@ -23,7 +23,7 @@ class KeyPathBinding<ModelType> {
     // When view (text field) changes then update model
     var allowModelUpdatesFromView: Bool = true
 
-    init(model: ModelType, valueKeyPath: ReferenceWritableKeyPath<ModelType, String>) {
+    init(model: ModelType, valueKeyPath: WritableKeyPath<ModelType, String>) {
         self.model = model
         self.valueKeyPath = valueKeyPath
     }
