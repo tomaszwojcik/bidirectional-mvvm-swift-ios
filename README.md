@@ -13,3 +13,7 @@ Project is divived in 4 groups, to keeps things simple:
 - Model - `Credentials` model (with 2 string fields)
 - ViewModel - you should do all model and view operation via `LoginViewModel` class
 - Controller - in which you bind `UITextFields` to our view model
+
+## Important note about structs
+
+This example works for structs, however each binding creates it's own struct copy.
