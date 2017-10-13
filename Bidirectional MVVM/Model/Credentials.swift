@@ -8,9 +8,13 @@
 
 import Foundation
 
-class Credentials {
-    var email: String
-    var password: String
+struct Credentials {
+    var email: String {
+        didSet { print("didSet email to \(email)") }
+    }
+    var password: String {
+        didSet { print("didSet password to \(password)") }
+    }
 
     init(email: String, password: String) {
         self.email = email
