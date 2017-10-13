@@ -10,10 +10,10 @@ import Foundation
 
 struct Credentials {
     var email: String {
-        didSet { print("didSet email to \(email)") }
+        didSet { /* NOP, see debugger output */ }
     }
     var password: String {
-        didSet { print("didSet password to \(password)") }
+        didSet { /* NOP, see debugger output */ }
     }
 
     init(email: String, password: String) {
