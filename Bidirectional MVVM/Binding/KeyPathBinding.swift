@@ -39,8 +39,9 @@ class KeyPathBinding<ModelType> {
 
         set {
             model[keyPath: valueKeyPath] = newValue
-            guard allowViewUpdatesFromModel else { return }
-            textField?.text = newValue
+            if allowViewUpdatesFromModel {
+                textField?.text = newValue
+            }
         }
     }
 
@@ -61,7 +62,8 @@ class KeyPathBinding<ModelType> {
     }
 
     @objc private func didChange(textField: UITextField) {
-        guard allowModelUpdatesFromView else { return }
-        value = textField.text ?? ""
+        if allowModelUpdatesFromView {
+            value = textField.text ?? ""
+        }
     }
 }
