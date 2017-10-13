@@ -11,6 +11,10 @@ import UIKit
 
 class KeyPathBinding<ModelType> {
     // Model that will be modified (*MUST* be var)
+
+    // *** IMPORTANT NOTE ON STRUCTS ***
+    // Each binding duplicates model (so you can end up with models for each variable)
+
     private var model: ModelType!
     // Key path to value in the model
     private let valueKeyPath: WritableKeyPath<ModelType, String>

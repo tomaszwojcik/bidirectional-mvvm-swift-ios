@@ -9,7 +9,7 @@
 import Foundation
 
 class LoginViewModel {
-    private var credentials: Credentials
+    private let credentials: Credentials
 
     let email: KeyPathBinding<Credentials>
     let password: KeyPathBinding<Credentials>
